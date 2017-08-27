@@ -1,7 +1,7 @@
 version: '3'
 services:
-  bittics-sink:
-    image: bittics-sink
+  bitics-sink:
+    image: bitics-sink
     ports:
      - "1234:1234"
   prometheus:

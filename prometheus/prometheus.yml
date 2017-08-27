@@ -7,7 +7,7 @@
   scrape_configs: [
     {
       job_name: "bittics-sink",
-      static_configs: [{ targets: ["bittics-sink:1234"] }],
+      static_configs: [{ targets: ["bitics-sink:1234"] }],
     }
   ]
 }
