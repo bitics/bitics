@@ -1,0 +1,36 @@
+group 'bitics'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'com.github.johnrengelman.shadow'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.1'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+
+    compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
+    compile group: 'org.bitcoinj', name: 'bitcoinj-core', version: '0.14.5'
+    compile group: 'io.prometheus', name: 'simpleclient', version: '0.0.26'
+    compile group: 'io.prometheus', name: 'simpleclient_hotspot', version: '0.0.26'
+    compile group: 'io.prometheus', name: 'simpleclient_servlet', version: '0.0.26'
+    compile group: 'org.eclipse.jetty', name: 'jetty-server', version: '9.4.6.v20170531'
+    compile group: 'org.eclipse.jetty', name: 'jetty-servlet', version: '9.4.6.v20170531'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'sink.bitics.Sink'
+    }
+}

@@ -1,0 +1,12 @@
+version: '3'
+services:
+  bitics-sink:
+    image: bitics-sink
+    ports:
+     - "1234:1234"
+  prometheus:
+    image: "prom/prometheus:v1.7.1"
+    volumes:
+    - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+    - "9090:9090"
